@@ -1,0 +1,6 @@
+name: Setup Fly.io
+description: Install flyctl for use in Buildkite
+author: https://github.com/dannymidnight
+requirements:
+  - bash
+  - curl

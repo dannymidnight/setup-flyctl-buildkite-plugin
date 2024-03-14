@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+echo "~~~ Setup Fly.io"
+
+# TODO: Negotiate operating system
+FLYIO_OS="linux" # or darwin, freebsd, openbsd, solaris, windows
+
+curl -L https://fly.io/install.sh | sh
+
+flyctl version
+
+echo "~~~ Verify Fly.io identify"
+
+flyctl auth whoami
