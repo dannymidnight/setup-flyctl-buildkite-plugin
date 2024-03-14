@@ -4,10 +4,13 @@ set -euo pipefail
 
 echo "~~~ Setup Fly.io"
 
-# TODO: Negotiate operating system
-FLYIO_OS="linux" # or darwin, freebsd, openbsd, solaris, windows
+if ! command -v flyctl &> /dev/null
+then
+  # TODO: Negotiate operating system
+  FLYIO_OS="linux" # or darwin, freebsd, openbsd, solaris, windows
 
-curl -L https://fly.io/install.sh | sh
+  curl -L https://fly.io/install.sh | sh
+fi
 
 flyctl version
 
